@@ -1,16 +1,16 @@
 let amigos = [];
 
 function adicionarAmigo() {
-   let InputAmigo = document.getElementById("amigo");
-   const nome = InputAmigo.value.trim();
+   let inputAmigo = document.getElementById("amigo");
+   const nome = inputAmigo.value.trim();
 
-    if (InputAmigo === "") {
+    if (nome === "") {
         alert("Por favor, insira o nome de um amigo.");
         return;
     }
 
     amigos.push(nome);
-    document.getElementById("amigo").value = "";
+    inputAmigo.value = "";
 
     exibirAmigos();
 }
