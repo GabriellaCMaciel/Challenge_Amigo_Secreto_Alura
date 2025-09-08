@@ -97,8 +97,7 @@ Este projeto é Open Source e livre para uso pessoal ou comercial.
 
 ## ✨ Feito com ❤️ por Gabriella C Maciel
 
-<a href="https://gabriellacmaciel.github.io/challenge_amigo_secreto_alura/" target="_blank">
-  <img src="https://img.shields.io/badge/Visualizar-Online-brightgreen" alt="Visualizar Online">
-</a>
+[![Visualizar Online](https://img.shields.io/badge/Visualizar-Online-brightgreen)](https://seu-usuario.github.io/amigo-secreto/)
+
 
 
