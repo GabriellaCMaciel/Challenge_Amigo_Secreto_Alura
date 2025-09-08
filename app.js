@@ -1,20 +1,30 @@
-// Cria um array vazio que vai guardar os nomes dos amigos
+// ==============================
+// Lista de amigos
+// ==============================
+
+// Cria um array vazio que vai guardar os nomes adicionados
 let amigos = [];
 
-// Função chamada quando o usuário clica no botão "Adicionar"
+
+// ==============================
+// Função: adicionarAmigo
+// ==============================
+// Chamado quando o usuário clica no botão "Adicionar"
+// Captura o nome do input, valida e adiciona na lista
 function adicionarAmigo() {
-   // Pega o input pelo id="amigo"
+   // Pega o campo de input pelo id="amigo"
    let inputAmigo = document.getElementById("amigo");
+
    // Captura o valor digitado e remove espaços extras do início/fim
    const nome = inputAmigo.value.trim();
 
-   // Validação: se o input estiver vazio, mostra um alerta e sai da função
+   // Validação: se o campo estiver vazio, não deixa prosseguir
    if (nome === "") {
        alert("Por favor, insira o nome de um amigo.");
-       return;
+       return; // Sai da função
    }
 
-   // Adiciona o nome no array amigos
+   // Adiciona o nome válido no array amigos
    amigos.push(nome);
 
    // Limpa o input para o próximo nome
@@ -24,39 +34,70 @@ function adicionarAmigo() {
    exibirAmigos();
 }
 
-// Função que exibe todos os amigos na lista (ul ou ol com id="listaAmigos")
+
+// ==============================
+// Função: exibirAmigos
+// ==============================
+// Atualiza a <ul> ou <ol> com id="listaAmigos"
+// Exibe todos os nomes armazenados no array "amigos"
 function exibirAmigos() {
-    // Seleciona o elemento da lista
+    // Seleciona a lista no HTML
     const lista = document.getElementById("listaAmigos");
 
-    // Limpa a lista antes de recriá-la
+    // Limpa os itens atuais antes de recriar
     lista.innerHTML = "";
 
-    // Percorre o array de amigos
+    // Percorre o array de amigos e cria <li> para cada um
     for (let i = 0; i < amigos.length; i++) {
-        // Cria um novo <li> para cada amigo
-        let item = document.createElement("li");
-        // Define o texto do <li> como o nome do amigo
-        item.textContent = amigos[i];
-        // Adiciona o <li> dentro da lista
-        lista.appendChild(item);
+        let item = document.createElement("li"); // Cria item da lista
+        item.textContent = amigos[i];            // Define o texto
+        lista.appendChild(item);                 // Adiciona no HTML
     }
 }
 
-// Função que sorteia aleatoriamente um amigo do array
+
+// ==============================
+// Função: sortearAmigo
+// ==============================
+// Sorteia aleatoriamente um amigo e cria o efeito de "roleta"
+// com animação de troca rápida antes de parar no escolhido
 function sortearAmigo() {
-    // Validação: precisa ter pelo menos 2 amigos no array
+    // Validação: precisa de pelo menos 2 amigos para sortear
     if (amigos.length < 2) {
         alert("Adicione pelo menos dois amigos para sortear.");
         return;
     }
 
-    // Gera um índice aleatório entre 0 e (amigos.length - 1)
-    let indiceSorteado = Math.floor(Math.random() * amigos.length);
+    // Seleciona a div de resultado
+    const resultadoDiv = document.getElementById("resultado");
 
-    // Pega o amigo correspondente a esse índice
-    let amigoSorteado = amigos[indiceSorteado];
+    // Limpa qualquer texto/efeito anterior
+    resultadoDiv.textContent = "";
+    resultadoDiv.classList.remove("highlight");
 
-    // Mostra o resultado dentro do elemento com id="resultado"
-    document.getElementById("resultado").innerHTML = "Amigo sorteado: " + amigoSorteado;
+    let i = 0; // Contador usado na roleta
+
+    // Intervalo que troca os nomes rapidamente (efeito de "roleta")
+    const intervalo = setInterval(() => {
+        resultadoDiv.textContent = amigos[i % amigos.length]; // Exibe o próximo nome
+        i++;
+    }, 100); // Troca a cada 100ms
+
+    // Para a roleta após 3 segundos e mostra o sorteado
+    setTimeout(() => {
+        clearInterval(intervalo); // Interrompe a troca
+
+        // Escolhe um índice aleatório do array
+        const indiceSorteado = Math.floor(Math.random() * amigos.length);
+        const amigoSorteado = amigos[indiceSorteado];
+
+        // Mostra o nome final sorteado
+        resultadoDiv.textContent = amigoSorteado;
+        resultadoDiv.classList.add("highlight"); // Destaca com efeito CSS
+
+        // Reproduz música de vitória
+        tocarMusica();
+    }, 3000); // Tempo da roleta = 3s
 }
+
+
