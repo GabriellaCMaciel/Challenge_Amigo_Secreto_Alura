@@ -33,7 +33,7 @@ Um aplicativo web divertido para organizar sorteios de **Amigo Secreto**, permit
 ## 🎬 Demonstração
 
 ![Demonstração do Sorteio](assets/ProjetoAmigoSecretoFuncionando.gif) 
-
+ 
 ---
 
 ## 💻 Instalação
