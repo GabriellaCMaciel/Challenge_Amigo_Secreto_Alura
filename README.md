@@ -33,7 +33,7 @@ Um aplicativo web divertido para organizar sorteios de **Amigo Secreto**, permit
 ## 🎬 Demonstração
 
 ![Demonstração do Sorteio](assets/ProjetoAmigoSecretoFuncionando.gif) 
-
+ 
 ---
 
 ## 💻 Instalação
@@ -89,10 +89,6 @@ amigo-secreto/
 - Velocidade da roleta: altere o intervalo do setInterval()
 
 - Som de vitória: substitua victory.wav na pasta assets
-
-## 📝 Licença
-
-Este projeto é Open Source e livre para uso pessoal ou comercial.
 
 ## ✨ Feito com ❤️ por Gabriella C Maciel
 
