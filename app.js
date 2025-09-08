@@ -100,4 +100,12 @@ function sortearAmigo() {
     }, 3000); // Tempo da roleta = 3s
 }
 
-
+// ==============================
+// Função: tocarMusica
+// ==============================
+// Reproduz um arquivo de áudio (efeito de vitória)
+function tocarMusica() {
+    // Cria objeto de áudio apontando para o arquivo na pasta /assets
+    const audio = new Audio("/assets/victory.wav"); 
+    audio.play(); // Executa o som
+}
