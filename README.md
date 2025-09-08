@@ -32,8 +32,7 @@ Um aplicativo web divertido para organizar sorteios de **Amigo Secreto**, permit
 
 ## 🎬 Demonstração
 
-![Demonstração do Sorteio](assets/demo.gif)  
-> GIF ilustrativo mostrando a animação do sorteio. Substitua pelo seu GIF real.
+![Demonstração do Sorteio](assets/ProjetoAmigoSecretoFuncionando.mp4) 
 
 ---
 
