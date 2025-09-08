@@ -1,14 +1,15 @@
 :root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
-    --color-white: #FFFFFF;
+    /* Variáveis globais de cores para facilitar manutenção do tema */
+    --color-primary: #4B69FD;        /* Azul principal (fundo da página) */
+    --color-secondary: #FFF9EB;      /* Cor de fundo clara (área de input) */
+    --color-tertiary: #C4C4C4;       /* Cinza para botões */
+    --color-button: #fe652b;         /* Laranja (botão de sortear) */
+    --color-button-hover: #e55720;   /* Laranja mais escuro ao passar o mouse */
+    --color-text: #444444;           /* Cinza para textos */
+    --color-white: #FFFFFF;          /* Branco padrão */
 }
 
-/* Estilos gerais */
+/* Reset de margens e padding, e define box-sizing para todos os elementos */
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +17,7 @@
 }
 
 body {
+    /* Página ocupa a tela inteira e centraliza o conteúdo */
     height: 100vh;
     background-color: var(--color-primary);
     display: flex;
@@ -24,13 +26,14 @@ body {
 }
 
 .main-content {
+    /* Estrutura principal da aplicação */
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
 }
 
-/* Banner */
+/* Banner do topo (logo, título, etc.) */
 .header-banner {
     flex: 40%;
     display: flex;
@@ -39,12 +42,12 @@ body {
     padding: 40px 0 0;
 }
 
-/* Seção de entrada */
+/* Seção de entrada (onde ficam input e botões) */
 .input-section {
     flex: 60%;
     background-color: var(--color-secondary);
     border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
+    border-radius: 64px 64px 0 0; /* cantos arredondados no topo */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,7 +55,7 @@ body {
     width: 100%;
 }
 
-/* Títulos */
+/* Título principal (na área azul) */
 .main-title {
     font-size: 48px;
     font-family: "Merriweather", serif;
@@ -61,6 +64,7 @@ body {
     color: var(--color-white);
 }
 
+/* Título da seção (ex: "Adicione seus amigos") */
 .section-title {
     font-family: "Inter", serif;
     font-size: 36px;
@@ -70,7 +74,7 @@ body {
     text-align: center;
 }
 
-/* Contêineres de entrada e botão */
+/* Container que agrupa input + botão adicionar */
 .input-wrapper {
     display: flex;
     justify-content: center;
@@ -79,20 +83,22 @@ body {
     margin-top: 20px;
 }
 
+/* Estilo do campo de texto */
 .input-name {
     width: 100%;
     padding: 10px;
     border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
+    border-radius: 25px 0 0 25px; /* bordas arredondadas à esquerda */
     font-size: 16px;
 }
 
+/* Container para os botões */
 .button-container {
     width: 300px;
     justify-content: center;
 }
 
-/* Estilos de entrada de texto */
+/* Estilo do input (com sombra e borda diferenciada) */
 .input-title {
     flex: 1;
     padding: 10px 15px;
@@ -104,7 +110,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilos de botão */
+/* Estilos padrão de botões */
 button {
     padding: 15px 30px;
     font-family: "Inter", sans-serif;
@@ -115,34 +121,49 @@ button {
     cursor: pointer;
 }
 
+/* Botão de adicionar amigo */
 .button-add {
     background-color: var(--color-tertiary);
     color: var(--color-text);
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 25px 25px 0; /* arredondado à direita */
 }
 
 .button-add:hover {
     background-color: #a1a1a1;
 }
 
-/* Listas */
+/* Estilo da lista de amigos */
 ul {
-    list-style-type: none;
+    list-style-type: none; /* remove bolinhas */
     color: var(--color-text);
     font-family: "Inter", sans-serif;
     font-size: 18px;
     margin: 20px 0;
 }
 
+/* Texto do resultado (sorteado) */
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: #05DF05; /* verde de sucesso */
     font-size: 22px;
     font-weight: bold;
     text-align: center;
 }
 
-/* Botão de sortear título */
+/* Destaque especial para o nome sorteado */
+.highlight {
+    font-size: 28px;
+    color: gold;
+    animation: pulse 0.6s ease infinite alternate; /* animação de "pulso" */
+}
+
+/* Animação usada em .highlight */
+@keyframes pulse {
+    from { transform: scale(1); opacity: 0.8; }
+    to   { transform: scale(1.2); opacity: 1; }
+}
+
+/* Botão de sortear */
 .button-draw {
     display: flex;
     align-items: center;
@@ -153,6 +174,7 @@ ul {
     font-size: 16px;
 }
 
+/* Ícone dentro do botão sortear */
 .button-draw img {
     margin-right: 40px;
 }
