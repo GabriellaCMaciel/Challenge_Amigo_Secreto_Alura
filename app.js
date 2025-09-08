@@ -38,7 +38,7 @@ function adicionarAmigo() {
 // ==============================
 // Função: exibirAmigos
 // ==============================
-// Atualiza a <ul> ou <ol> com id="listaAmigos"
+// Atualiza a <ul> com id="listaAmigos"
 // Exibe todos os nomes armazenados no array "amigos"
 function exibirAmigos() {
     // Seleciona a lista no HTML
